@@ -18,38 +18,9 @@ struct LoginView: View {
             
             TextField("Email", text: $viewModel.email)
                 .keyboardType(.emailAddress)
-                .textFieldStyle(AuthTextFieldStyle())
+                .textFieldStyle(AuthTextFieldStyle())            
             
-            Text("Password")
-                .font(.system(size: 15))
-            
-            if viewModel.showPassword {
-                TextField("Password", text: $viewModel.password)
-                    .textFieldStyle(AuthTextFieldStyle())
-                    .overlay(alignment: .trailing) {
-                        Button {
-                            viewModel.showPassword = false
-                        } label: {
-                            Image(systemName: "eye")
-                                .padding(.bottom)
-                        }
-                    }
-            } else {
-                SecureField("Password", text: $viewModel.password)
-                    .font(.system(size: 14))
-                    .overlay(alignment: .trailing) {
-                        Button {
-                            viewModel.showPassword = true
-                        } label: {
-                            Image(systemName: "eye.slash")
-                        }
-                    }
-                
-                Rectangle()
-                    .fill(.border)
-                    .frame(height: 1)
-                    .padding(.bottom, 15)
-            }
+            PasswordComponentView(showPassword: $viewModel.showPassword, password: $viewModel.password)
             
             Button {
                 //MARK: - TODO - Login Button
@@ -64,7 +35,6 @@ struct LoginView: View {
                     .clipShape(.rect(cornerRadius: 8))
             }
             
-
             HStack {
                 Spacer()
                 Text("Don't have an account?")
@@ -76,10 +46,7 @@ struct LoginView: View {
                         .font(.system(size: 14, weight: .semibold))
                 }
                 Spacer()
-
             }
-
-                
         }
         .padding(.horizontal)
         .fullScreenCover(isPresented: $viewModel.presentRegisterView) {
