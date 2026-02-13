@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
-    
+    @EnvironmentObject var sessionManager: SessionManager
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,8 +24,9 @@ struct LoginView: View {
             
             Button {
                 //MARK: - TODO - Login Button
-                
+                sessionManager.sessionState = .loggedIn
             } label: {
+                
                 Text("Login")
                     .padding(12)
                     .foregroundStyle(.white)
@@ -57,4 +58,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+        .environmentObject(SessionManager())
 }

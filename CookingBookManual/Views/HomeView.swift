@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var viewModel = HomeViewModel()
+    @EnvironmentObject var sessionManager: SessionManager
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                Text("Cooking Book App")
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        viewModel.showSignOutAlert = true
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .foregroundStyle(.black)
+                    }
+                }
+            }
+            .alert("Are you sure you would like to logout", isPresented: $viewModel.showSignOutAlert) {
+                Button("Sign Out", role: .destructive) {
+                    sessionManager.sessionState = .loggedOut
+                }
+            }
+
+
         }
-        .padding()
     }
 }
 
 #Preview {
     HomeView()
+        .environmentObject(SessionManager())
 }
