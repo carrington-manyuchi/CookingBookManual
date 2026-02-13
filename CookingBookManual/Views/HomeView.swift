@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     @EnvironmentObject var sessionManager: SessionManager
-
+    
     fileprivate func ReceipeRow(receipe: Receipe) -> some View {
         VStack(alignment: .leading) {
             Image(receipe.image)
@@ -39,9 +39,15 @@ struct HomeView: View {
                         }
                     }
                 }
-                Spacer()
                 .padding(.horizontal)
-
+                Spacer()                
+                Button {
+                    viewModel.showAddReciepeView = true
+                } label: {
+                    Text("Add Receipe")
+                }
+                .buttonStyle(PrimaryButtonStyle())
+                .padding(.horizontal)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -58,6 +64,9 @@ struct HomeView: View {
                     sessionManager.sessionState = .loggedOut
                 }
             }
+        }
+        .sheet(isPresented: $viewModel.showAddReciepeView) {
+            AddReceipeView()
         }
     }
 }

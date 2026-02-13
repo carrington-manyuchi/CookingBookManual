@@ -10,5 +10,6 @@ import Combine
 
 class HomeViewModel: ObservableObject {
     @Published var showSignOutAlert: Bool = false
+    @Published var showAddReciepeView = false
     
 }

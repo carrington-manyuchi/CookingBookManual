@@ -27,7 +27,6 @@ struct RegisterView: View {
                 .keyboardType(.emailAddress)
                 .textFieldStyle(AuthTextFieldStyle())
             
-            
             PasswordComponentView(showPassword: $viewModel.showPassword, password: $viewModel.password)
             
             Button {
@@ -35,13 +34,8 @@ struct RegisterView: View {
                 
             } label: {
                 Text("Sign up")
-                    .padding(12)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 15, weight: .semibold))
-                    .frame(maxWidth: .infinity)
-                    .background(.green)
-                    .clipShape(.rect(cornerRadius: 8))
             }
+            .buttonStyle(PrimaryButtonStyle())
             
             HStack {
                 Spacer()

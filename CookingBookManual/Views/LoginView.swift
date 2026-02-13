@@ -23,18 +23,11 @@ struct LoginView: View {
             PasswordComponentView(showPassword: $viewModel.showPassword, password: $viewModel.password)
             
             Button {
-                //MARK: - TODO - Login Button
                 sessionManager.sessionState = .loggedIn
             } label: {
-                
                 Text("Login")
-                    .padding(12)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 15, weight: .semibold))
-                    .frame(maxWidth: .infinity)
-                    .background(.green)
-                    .clipShape(.rect(cornerRadius: 8))
             }
+            .buttonStyle(PrimaryButtonStyle())
             
             HStack {
                 Spacer()
