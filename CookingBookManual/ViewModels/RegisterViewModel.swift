@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-import Combine
 
-class RegisterViewModel: ObservableObject {
-    @Published var presentLoginView: Bool = false
-    @Published var showPassword: Bool = false
-    @Published var username: String = ""
-    @Published var email = ""
-    @Published var password = ""
+@Observable
+class RegisterViewModel {
+    var presentLoginView: Bool = false
+    var showPassword: Bool = false
+    var username: String = ""
+    var email = ""
+    var password = ""
     
 }

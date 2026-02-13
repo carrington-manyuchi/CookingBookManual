@@ -5,13 +5,13 @@
 //  Created by Manyuchi, Carrington C on 2026/02/13.
 //
 
-import Foundation
-import Combine
+import SwiftUI
 
-class LoginViewModel: ObservableObject {
-    @Published var presentRegisterView: Bool = false
-    @Published var presentLoginView: Bool = false
-    @Published var showPassword: Bool = false
-    @Published var email = ""
-    @Published var password = ""
+@Observable
+class LoginViewModel {
+    var presentRegisterView: Bool = false
+    var presentLoginView: Bool = false
+    var showPassword: Bool = false
+    var email = ""
+    var password = ""
 }

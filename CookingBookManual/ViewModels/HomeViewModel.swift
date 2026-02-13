@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import Combine
 
-class HomeViewModel: ObservableObject {
-    @Published var showSignOutAlert: Bool = false
-    @Published var showAddReciepeView = false
+@Observable
+class HomeViewModel {
+   var showSignOutAlert: Bool = false
+   var showAddReciepeView = false
     
 }

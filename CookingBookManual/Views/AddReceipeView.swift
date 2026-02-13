@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddReceipeView: View {
-    @StateObject var viewModel = AddReceipeViewModel()
+    @State var viewModel = AddReceipeViewModel()
 
     var body: some View {
         VStack(alignment: .leading) {

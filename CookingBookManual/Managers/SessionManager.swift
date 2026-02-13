@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import Combine
 
-class SessionManager: ObservableObject {
+@Observable
+class SessionManager {
     
-    @Published var sessionState: SessionState = .loggedOut
-    
-    
+    var sessionState: SessionState = .loggedOut
 }
