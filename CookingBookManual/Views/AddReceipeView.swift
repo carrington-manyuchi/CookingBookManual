@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct AddReceipeView: View {
-    @State private var receipeName = ""
-    @State private var preparationTime = 0
-    @State private var instructions = ""
+    @StateObject var viewModel = AddReceipeViewModel()
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("What's New")
@@ -30,7 +29,7 @@ struct AddReceipeView: View {
                 .font(.system(size: 15, weight: .semibold))
 
             
-            TextField("", text: $receipeName)
+            TextField("", text: $viewModel.receipeName)
                 .textFieldStyle(CapsuleTextFieldStyle())
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
@@ -39,7 +38,7 @@ struct AddReceipeView: View {
                 .padding(.top)
                 .font(.system(size: 15, weight: .semibold))
             
-            Picker(selection: $preparationTime) {
+            Picker(selection: $viewModel.preparationTime) {
                 ForEach(0...120, id: \.self) { time in
                     
                     if time % 5 ==  0 {
@@ -57,7 +56,7 @@ struct AddReceipeView: View {
                 .padding(.top)
                 .font(.system(size: 15, weight: .semibold))
             
-            TextEditor(text: $instructions)
+            TextEditor(text: $viewModel.instructions)
                 .frame(height: 150)
                 .background(.primaryFormEntry)
                 .scrollContentBackground(.hidden)

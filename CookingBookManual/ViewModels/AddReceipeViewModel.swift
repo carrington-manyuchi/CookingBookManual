@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import Combine
 
 class AddReceipeViewModel: ObservableObject {
-    
+    @Published var receipeName = ""
+    @Published var preparationTime = 0
+    @Published var instructions = ""
 }
