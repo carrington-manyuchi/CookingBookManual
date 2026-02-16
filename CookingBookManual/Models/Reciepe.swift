@@ -21,7 +21,6 @@ struct Receipe: Identifiable, Codable {
         self.instructions = instructions
         self.time = time
     }
-    
 }
 
 extension Receipe {
@@ -34,7 +33,6 @@ extension Receipe {
         Receipe(id: UUID().uuidString, name: "Pasta", image: "pasta", instructions: "To prepare pasta, start by bringing a large pot of salted water to a boil. Choose your pasta shape and add it to the boiling water, stirring occasionally to prevent sticking. Follow the cooking time suggested on the package, typically between 8 to 12 minutes, until the pasta is al dente, which means it should be tender but still firm to the bite. While the pasta cooks, you can prepare a sauce of your choice, such as a quick garlic and olive oil sauté, a creamy Alfredo, or a hearty marinara. Once the pasta is cooked, drain it, reserving a cup of the pasta water. Return the pasta to the pot and mix it with your sauce, adding a bit of the reserved pasta water to help the sauce cling to the pasta smoothly. Serve immediately with a sprinkle of grated Parmesan cheese and fresh herbs for an extra touch of flavor.", time: 20),
         Receipe(id: UUID().uuidString, name: "Pizza", image: "pizza", instructions: "To prepare homemade pizza, begin by preheating your oven to its highest setting, typically between 450°F to 500°F (232°C to 260°C). If you have a pizza stone, place it in the oven to heat up. Roll out your pizza dough on a floured surface to your desired thickness. Transfer the dough to a pizza peel or an inverted baking sheet, dusted with flour or cornmeal to prevent sticking. Spread a thin layer of pizza sauce over the dough, leaving a small border for the crust. Top with your favorite ingredients—mozzarella cheese, pepperoni, vegetables, or whatever you like. If using a pizza stone, carefully slide the pizza onto the hot stone in the oven; otherwise, place the baking sheet in the oven. Bake for about 10-15 minutes, or until the crust is golden and the cheese is bubbly and slightly browned. Remove from the oven, let cool for a few minutes, then slice and serve hot. Enjoy creating a variety of pizzas with different toppings for a fun and customizable meal.", time: 30),
         Receipe(id: UUID().uuidString, name: "Salad", image: "salad", instructions: "To prepare a fresh and vibrant salad, begin by choosing a variety of greens such as romaine, arugula, spinach, or mixed baby leaves as your base. Wash and dry the greens thoroughly. In a large bowl, add the cleaned greens along with a mix of colorful vegetables like sliced cucumbers, cherry tomatoes, red onions, and bell peppers. For added texture and flavor, incorporate ingredients such as nuts, seeds, crumbled cheese, or fresh herbs. To dress the salad, whisk together a simple vinaigrette of olive oil, vinegar (like balsamic or red wine), a touch of honey, mustard, salt, and pepper. Drizzle the dressing over the salad just before serving and toss well to coat every leaf. This ensures your salad remains crisp and not soggy. Serve immediately as a light main dish or alongside your favorite entrée for a complete meal.", time: 10)
-        
     ]
     
 }
